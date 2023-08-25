@@ -47,7 +47,7 @@ def main():
 
     
     #new_file_path = os.path.join(root_directory, "requirements.txt")
-    commit_message = "Ajout du contenu de readme #5"
+    commit_message = "Ajout du contenu de readme  close #5"
     
     #with open(new_file_path, "w") as new_file:
         # Écrivez le contenu du fichier si nécessaire

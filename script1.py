@@ -41,11 +41,11 @@ def main():
 
     manager = ProjectManager(root_directory)
 
-    os.makedirs(os.path.join(root_directory, "src"))
+    os.makedirs(os.path.join(root_directory, "notebooks"))
 
     
-    new_file_path = os.path.join(root_directory, "src/utils.py")
-    commit_message = "Ajout du fichier utils.py"
+    new_file_path = os.path.join(root_directory, "notebooks/main.py")
+    commit_message = "Ajout du  repertoire notebooks et du fichier main.py close #2"
     
     with open(new_file_path, "w") as new_file:
         # Écrivez le contenu du fichier si nécessaire

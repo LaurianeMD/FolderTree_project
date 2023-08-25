@@ -41,15 +41,16 @@ def main():
 
     manager = ProjectManager(root_directory)
 
-    #os.makedirs(os.path.join(root_directory, "notebooks"))
+    os.makedirs(os.path.join(root_directory, "data/cleaned"))
+    os.makedirs(os.path.join(root_directory, "data/raw"))
 
     
-    new_file_path = os.path.join(root_directory, "requirements.txt")
-    commit_message = "Ajout du  fichier requirements close #3"
+    #new_file_path = os.path.join(root_directory, "requirements.txt")
+    commit_message = "Ajout du dossier data et ses sous-dossiers close #4"
     
-    with open(new_file_path, "w") as new_file:
+    #with open(new_file_path, "w") as new_file:
         # Écrivez le contenu du fichier si nécessaire
-        new_file.write('')
+       # new_file.write('')
         
     manager.add_commit_push(commit_message)
     print("Fichier ajouté, commité et poussé avec succès.")

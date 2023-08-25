@@ -6,27 +6,24 @@ class ProjectManager:
         self.root_dir = root_dir
 
     def add_commit_push(self, filepath, commit_message):
-        subprocess.run(["git", "add", filepath])
-        subprocess.run(["git", "commit", "-m", commit_message])
-        subprocess.run(["git", "push", "origin", "master"])
+        subprocess.run(["git", "add", filepath],cwd=self.root_dir)
+        subprocess.run(["git", "commit", "-m", commit_message],cwd=self.root_dir)
+        subprocess.run(["git", "push", "origin", "master"],cwd=self.root_dir)
 
 def main():
-    root_directory = r"C:\chemin\vers\le\depot"  # Chemin absolu vers votre dépôt Git
+    root_directory = os.getcwd()  # Chemin absolu vers votre dépôt Git
 
     manager = ProjectManager(root_directory)
     
-    new_file_path = os.path.join(root_directory, "src", "utils.py")
+    new_file_path = os.path.join(root_directory, "src/utils.py")
     commit_message = "Ajout du fichier utils.py"
     
     with open(new_file_path, "w") as new_file:
         # Écrivez le contenu du fichier si nécessaire
-        pass
+        new_file.write('')
         
     manager.add_commit_push(new_file_path, commit_message)
     print("Fichier ajouté, commité et poussé avec succès.")
-
-if __name__ == "__main__":
-    main()
 import os
 import subprocess
 
@@ -34,25 +31,27 @@ class ProjectManager:
     def __init__(self, root_dir):
         self.root_dir = root_dir
 
-    def add_commit_push(self, filepath, commit_message):
-        subprocess.run(["git", "add", filepath])
-        subprocess.run(["git", "commit", "-m", commit_message])
-        subprocess.run(["git", "push", "origin", "master"])
+    def add_commit_push(self, commit_message, filepath = '.'):
+        subprocess.run(["git", "add", filepath],cwd=self.root_dir)
+        subprocess.run(["git", "commit", "-m", commit_message],cwd=self.root_dir)
+        subprocess.run(["git", "push", "origin", "main"],cwd=self.root_dir)
 
 def main():
-    root_directory = r"c:\Users\HP ProBook\OneDrive\Documents\AMaster Laury\Master DIT\Semestre1\Devops\Project_Arborescence"  # Chemin absolu vers votre dépôt Git
+    root_directory = os.getcwd()  # Chemin absolu vers votre dépôt Git
 
     manager = ProjectManager(root_directory)
+
+    os.makedirs(os.path.join(root_directory, "src"))
+
     
-    new_file_path = os.path.join(root_directory, "src", "utils.py")
+    new_file_path = os.path.join(root_directory, "src/utils.py")
     commit_message = "Ajout du fichier utils.py"
     
     with open(new_file_path, "w") as new_file:
         # Écrivez le contenu du fichier si nécessaire
-        pass
+        new_file.write('')
         
-    manager.add_commit_push(new_file_path, commit_message)
+    manager.add_commit_push(commit_message)
     print("Fichier ajouté, commité et poussé avec succès.")
 
-if __name__ == "__main__":
-    main()
+main()

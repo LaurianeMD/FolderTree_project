@@ -41,13 +41,13 @@ def main():
 
     manager = ProjectManager(root_directory)
 
-    os.makedirs(os.path.join(root_directory, "docs"))
-    os.makedirs(os.path.join(root_directory, "models"))
-    os.makedirs(os.path.join(root_directory, "reports"))
+    # os.makedirs(os.path.join(root_directory, "docs"))
+    # os.makedirs(os.path.join(root_directory, "models"))
+    # os.makedirs(os.path.join(root_directory, "reports"))
 
     
     #new_file_path = os.path.join(root_directory, "requirements.txt")
-    commit_message = "Ajout des dossiers docsm models et reports  close #1"
+    commit_message = "Ajout du contenu de readme #5"
     
     #with open(new_file_path, "w") as new_file:
         # Écrivez le contenu du fichier si nécessaire
